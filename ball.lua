@@ -3,10 +3,11 @@ Ball = {}
 
 
 function Ball:load()
+  self.img = love.graphics.newImage("assets/ball.png")
   self.x = love.graphics.getWidth() /2
   self.y = love.graphics.getHeight() /2
-  self.width = 20
-  self.height = 20
+  self.width = self.img:getWidth()
+  self.height = self.img:getHeight()
   self.speed = 200
   self.xVel = -self.speed
   self.yVel = 0
@@ -64,5 +65,5 @@ function Ball:move(dt)
 end
 
 function Ball:draw()
-  love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
+  love.graphics.draw(self.img, self.x ,self.y)
 end

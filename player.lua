@@ -4,8 +4,9 @@ Player = {}
 function Player:load()
   self.x = 50
   self.y = love.graphics.getHeight() /2
-  self.width = 20
-  self.height = 100
+  self.img = love.graphics.newImage("assets/player1.png")
+  self.width = self.img:getWidth()
+  self.height = self.img:getHeight()
   self.speed = 500
 end
 
@@ -36,5 +37,5 @@ function Player:checkBoundries()
 end
 
 function Player:draw()
-  love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
+  love.graphics.draw(self.img,self.x,self.y)
 end
